@@ -9,12 +9,20 @@ const displayTemples = (temples) => {
     temples.forEach(function (temple) {
         const articleElement = document.createElement("article");
         const h3Element = document.createElement("h3");
+        h3Element.style.textAlign = "center";
+        h3Element.style.position = "relative";
+        h3Element.style.bottom = "25px";
         h3Element.textContent = temple.templeName;
+
         const imgElement = document.createElement("img");
         imgElement.src = temple.imageUrl;
         imgElement.alt = temple.location;
+        imgElement.style.boxShadow = "0px 0px 25px black";
+        
         articleElement.appendChild(h3Element);
         articleElement.appendChild(imgElement);
+        articleElement.style.backgroundColor = "#b9b9b9"; 
+        articleElement.style.margin = "10px";
         templesElement.appendChild(articleElement);
     });
 };
@@ -47,7 +55,7 @@ const sortBy = function () {
             break;
         case 'older':
             displayTemples(templeList.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
-            break;  // Fix: Use temple.dedicationDate instead of temple.dedicatedDate
+            break;  
         case 'all':
             displayTemples(templeList);
             break;
