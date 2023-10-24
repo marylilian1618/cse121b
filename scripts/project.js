@@ -1,37 +1,31 @@
-// project.js
-
 import { fetchQuote, fetchRandomImage } from './scripts/apiFunctions';
 
 function generateData() {
-    const categoryQuote = 'inspirational';
-    const apiKeyQuote = 'f6vULTcfo1MhZE1FbKbfDw==fZYODvVP30Abn89Q';
+    const apiKey = 'f6vULTcfo1MhZE1FbKbfDw==fZYODvVP30Abn89Q';
 
-    fetchQuote(categoryQuote, apiKeyQuote)
-        .done(function (result) {
-            console.log(result);
+    fetchQuote(apiKey)
+        .done(function (quoteResult) {
+            console.log(quoteResult);
             const quotesContainer = document.getElementById('quotes');
             const quoteElement = document.createElement('h3');
-            quoteElement.textContent = result.quote;
+            quoteElement.textContent = quoteResult.quote;
             quotesContainer.innerHTML = '';
             quotesContainer.appendChild(quoteElement);
         })
         .fail(function (jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
+            console.error('Error fetching quote: ', jqXHR.responseText);
         });
 
-    const categoryImage = 'nature';
-    const apiKeyImage = 'f6vULTcfo1MhZE1FbKbfDw==fZYODvVP30Abn89Q';
-
-    fetchRandomImage(categoryImage, apiKeyImage)
-        .done(function (result) {
-            console.log(result);
+    fetchRandomImage(apiKey)
+        .done(function (imageResult) {
+            console.log(imageResult);
             const imgElement = document.createElement('img');
-            imgElement.src = result.url;
+            imgElement.src = imageResult.url;
             const quotesContainer = document.getElementById('quotes');
             quotesContainer.appendChild(imgElement);
         })
         .fail(function (jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
+            console.error('Error fetching image: ', jqXHR.responseText);
         });
 }
 
