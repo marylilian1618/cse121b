@@ -70,9 +70,9 @@ border-bottom: 1px solid #ccc;
 
 h2 {
     font-size: 1.2rem;
-    color: navy;
+    color: rgb(103, 126, 0);
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 main {
