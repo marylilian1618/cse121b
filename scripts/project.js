@@ -1,9 +1,8 @@
-import { fetchQuote, fetchRandomImage } from './apiFunctions.js';
+import { fetchQuote, fetchRandomImage } from './scripts/apiFunctions';
 
 function generateData() {
     const apiKey = 'f6vULTcfo1MhZE1FbKbfDw==fZYODvVP30Abn89Q';
     const quotesContainer = document.getElementById('quotes');
-
     quotesContainer.innerHTML = '';
 
     fetchQuote(apiKey)
