@@ -1,7 +1,5 @@
 export function fetchQuote(apiKey) {
-    const categories = ['inspirational', 'life', 'motivational', 'success'];
-
-    // Randomly select a category
+    const categories = ['inspirational', 'life', 'happiness', 'freedom'];
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
 
     return $.ajax({
@@ -13,9 +11,7 @@ export function fetchQuote(apiKey) {
 }
 
 export function fetchRandomImage(apiKey) {
-    const categories = ['nature', 'animals', 'travel', 'landscape'];
-
-    // Randomly select a category
+    const categories = ['nature', 'abstract', 'city', 'still_life'];
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
 
     return $.ajax({
