@@ -11,12 +11,12 @@ export function fetchQuote(apiKey) {
 }
 
 export function fetchRandomImage(apiKey) {
-    const categories = ['nature', 'abstract', 'city', 'still_life'];
-    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    const categoriesImage = ['nature', 'abstract', 'city', 'still_life'];
+    const randomCategoryImage = categoriesImage[Math.floor(Math.random() * categoriesImage.length)];
 
     return $.ajax({
         method: 'GET',
-        url: `https://api.api-ninjas.com/v1/randomimage?category=${randomCategory}`,
-        headers: { 'X-Api-Key': apiKey, 'Accept': 'image/jpg' }
+        url: `https://api.api-ninjas.com/v1/randomimage?category=${randomCategoryImage}`,
+        headers: { 'X-Api-Key': apiKey }
     });
 }

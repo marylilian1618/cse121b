@@ -1,15 +1,17 @@
-import { fetchQuote, fetchRandomImage } from './scripts/apiFunctions';
+import { fetchQuote, fetchRandomImage } from './apiFunctions.js';
 
 function generateData() {
+    console.log('Esta entrando a la funcion...');
     const apiKey = 'f6vULTcfo1MhZE1FbKbfDw==fZYODvVP30Abn89Q';
     const quotesContainer = document.getElementById('quotes');
     quotesContainer.innerHTML = '';
 
     fetchQuote(apiKey)
         .done(function (quoteResult) {
-            console.log(quoteResult);
+            // console.log(quoteResult[0].author);
+            // console.log(quoteResult[0].author);
             const quoteElement = document.createElement('h3');
-            quoteElement.textContent = quoteResult.quote;
+            quoteElement.textContent = quoteResult[0].quote;
             quotesContainer.appendChild(quoteElement);
         })
         .fail(function (jqXHR) {
@@ -23,7 +25,9 @@ function generateData() {
         .done(function (imageResult) {
             console.log(imageResult);
             const imgElement = document.createElement('img');
-            imgElement.src = imageResult.url;
+            //imgElement.src = imageResult;
+            imgElement.src = "data:image/png;base64," + imageResult;
+
             quotesContainer.appendChild(imgElement);
         })
         .fail(function (jqXHR) {
@@ -34,4 +38,4 @@ function generateData() {
         });
 }
 
-document.getElementById('generate').addEventListener('click', generateData);
+document.getElementById("generate").addEventListener('click', generateData);

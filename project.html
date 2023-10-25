@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
   <main>
     <h1>W07: Final project</h1>
     <h2>Random Inspirational Quote and Nature Image </h2>
-    <button id="generate">Generate</button>
+    <input type="button" id="generate" value="Generate">
     <div id="quotes"></div>
   </main>
   <footer>
@@ -35,11 +36,14 @@
   </footer>
   <script src="scripts/main.js"></script>
   <script>
+    // function algo() {
+    //   console.log("algo...");
+    // }
+    // document.getElementById("generate").addEventListener("click", algo);
     document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script type="module" src="./scripts/project.js"></script>
-  <script type="module" src="./scripts/apiFunctions.js"></script>
+  <!-- <script type="module" src="./scripts/apiFunctions.js"></script> -->
 </body>
 
 </html>
